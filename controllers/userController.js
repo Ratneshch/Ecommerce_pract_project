@@ -69,6 +69,7 @@ exports.getProfile = (req, res) => {
     });
 };
 
+
 // Get all users
 exports.getAllUsers = (req, res) => {
     const query = 'SELECT id, name, email FROM users';
