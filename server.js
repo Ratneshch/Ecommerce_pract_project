@@ -2,6 +2,8 @@ const express =require('express');
 const db= require('./db');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productsRoutes')
+const cartRoutes = require('./routes/cartRoutes')
+
 const cors =require ('cors');
 
 const app= express();
@@ -24,6 +26,9 @@ app.get("/",(req,res)=>{
 app.use('/api/user', userRoutes);
 //Products
 app.use('/api/products', productRoutes);
+
+app.use('/api/cart', cartRoutes);
+
 
 app.listen(PORT,()=>{
     console.log(`Server is ruinning on ${PORT}`);
