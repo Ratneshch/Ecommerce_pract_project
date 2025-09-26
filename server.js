@@ -3,6 +3,9 @@ const db= require('./db');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productsRoutes')
 const cartRoutes = require('./routes/cartRoutes')
+const addressRoutes = require('./routes/addressRoutes')
+const orderRoutes = require('./routes/orderRoutes');
+const paymentRoutes = require("./routes/paymentRoute");
 
 const cors =require ('cors');
 
@@ -27,8 +30,17 @@ app.use('/api/user', userRoutes);
 //Products
 app.use('/api/products', productRoutes);
 
+//Cart
 app.use('/api/cart', cartRoutes);
 
+//Address
+app.use("/api/address", addressRoutes);
+
+//Orders
+app.use("/api/orders", orderRoutes);
+
+//Payment
+app.use("/api/payment", paymentRoutes);
 
 app.listen(PORT,()=>{
     console.log(`Server is ruinning on ${PORT}`);
